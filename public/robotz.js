@@ -12,25 +12,25 @@ var submitButton = document.querySelector('.execute-commands button');
 
 forwardButton.addEventListener('click', function() {
   commandArea.value = commandArea.value + 'Forward\n';
-  commandNumbers.innerHTML += '<li>Forward <span>&uarr;</span></li>';
+  commandNumbers.innerHTML += '<li>Forward <span class="icon-arrow-up2"></span></li>';
   submitButton.style.display = 'block';
 });
 
 backwardButton.addEventListener('click', function() {
   commandArea.value = commandArea.value + 'Backward\n';
-  commandNumbers.innerHTML += '<li>Backward <span>&darr;</span></li>';
+  commandNumbers.innerHTML += '<li>Backward <span class="icon-arrow-down2"></span></li>';
   submitButton.style.display = 'block';
 });
 
 turnLeftButton.addEventListener('click', function() {
   commandArea.value = commandArea.value + 'Turn Left\n';
-  commandNumbers.innerHTML += '<li>Turn Left <span>&larr;</span></li>';
+  commandNumbers.innerHTML += '<li>Turn Left <span class="icon-undo"></span></li>';
   submitButton.style.display = 'block';
 });
 
 turnRightButton.addEventListener('click', function() {
   commandArea.value = commandArea.value + 'Turn Right\n';
-  commandNumbers.innerHTML += '<li>Turn Right <span>&rarr;</span></li>';
+  commandNumbers.innerHTML += '<li>Turn Right <span class="icon-redo"></span></li>';
   submitButton.style.display = 'block';
 });
 
