@@ -26,7 +26,10 @@ function Robot() {
 
   function sendCommand(command, amount) {
     var amount_params = amount ? '?amount=' + amount : '';
-    var response = request('GET', 'http://localhost:4000/robotz/' + command  + amount_params);
+    var server =  process.env.ENDPOINT || "localhost:4000"
+    // var server =  process.env.ENDPOINT || "192.168.1.128:4000"
+    var url = "http://" + server + "/robotz/"
+    var response = request('GET', url + command  + amount_params);
 
     console.log("response status: %s", response.statusCode);
   }
