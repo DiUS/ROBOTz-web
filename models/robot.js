@@ -27,7 +27,6 @@ function Robot() {
   function sendCommand(command) {
     var response = request('GET', 'http://localhost:4000/robotz/' + command);
 
-    console.log("response status: %s", response.getStatus());
-    console.log(response.getBody());
+    console.log("response status: %s", response.statusCode);
   }
 }
