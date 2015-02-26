@@ -176,3 +176,46 @@ textarea {
 .icon-arrow-down2:before {
 	content: "\ea3e";
 }
+
+
+
+
+/* MOBILE */
+
+@media all and (max-width: 480px) {
+
+  .container {
+    width: auto;
+  }
+
+  .col-left, .col-right {
+    float: none;
+    width: auto;
+  }
+
+  .col-right {
+    padding-top: 0;
+  }
+
+  .col-left {
+    padding: 0;
+    border-right-style: none;
+  }
+
+  .robotz-application {
+    /*margin-top: 0;*/
+    padding-top: 0;
+  }
+
+  .available-commands {
+    margin: 0 auto;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .execute-commands button {
+    width: 100%;
+  }
+}
