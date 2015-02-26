@@ -13,8 +13,15 @@ app.get('/', function (request, response) {
   response.render('index');
 });
 
+var Commands = require('./models/commands');
+var Robot    = require('./models/robot');
+var robot    = Robot();
+
 app.post('/commands', function(request, response) {
   console.log(request.body);
+
+  Commands(request.body).execute(robot);
+
   response.json({
     ok: true
   });
