@@ -3,25 +3,43 @@ html(lang='en')
   head
     title ROBOTz application
 
+    link(href='http://fonts.googleapis.com/css?family=Lobster|Indie+Flower', rel='stylesheet')
     link(rel='stylesheet', media='all', href='/normalize.css')
     link(rel='stylesheet', media='all', href='/robotz.css')
     script(src='robotz.js' defer)
 
   body
 
+    .big-background
+
     .robotz-application
 
-      h1 ROBOTz!!
+      .container
 
-      .available-commands
-        button.forward Forward
-        button.backward Backward
-        button.turn-left Turn Left
-        button.turn-right Turn Right
+        .col-right
 
-      .command-list
-        textarea(cols="50" rows="10" disabled="disabled")
+          .available-commands
+            div.forward
+              label &uarr;
+            div.turn-right
+              label &rarr;
+            div.backward
+              label &darr;
+            div.turn-left
+              label &larr;
 
-      .execute-commands
-        button Make the robot move!
-        label.command-result
+          .execute-commands
+            button Make the robot move!
+            p.command-result
+
+        .col-left
+
+          h1 ROBOTz!!
+
+          p.welcome Welcome to ROBOTz!! Build your robot's journey by clicking on the dial to the right &rarr;
+
+          .command-list
+            textarea(cols="50" rows="10" disabled="disabled")
+            ol
+
+        .clearfix

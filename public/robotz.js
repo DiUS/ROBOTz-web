@@ -6,23 +6,32 @@ var turnLeftButton = document.querySelector('.turn-left');
 var turnRightButton = document.querySelector('.turn-right');
 
 var commandArea = document.querySelector('.command-list textarea');
+var commandNumbers = document.querySelector('.command-list ol');
 
 var submitButton = document.querySelector('.execute-commands button');
 
 forwardButton.addEventListener('click', function() {
   commandArea.value = commandArea.value + 'Forward\n';
+  commandNumbers.innerHTML += '<li>Forward <span>&uarr;</span></li>';
+  submitButton.style.display = 'block';
 });
 
 backwardButton.addEventListener('click', function() {
   commandArea.value = commandArea.value + 'Backward\n';
+  commandNumbers.innerHTML += '<li>Backward <span>&darr;</span></li>';
+  submitButton.style.display = 'block';
 });
 
 turnLeftButton.addEventListener('click', function() {
   commandArea.value = commandArea.value + 'Turn Left\n';
+  commandNumbers.innerHTML += '<li>Turn Left <span>&larr;</span></li>';
+  submitButton.style.display = 'block';
 });
 
 turnRightButton.addEventListener('click', function() {
   commandArea.value = commandArea.value + 'Turn Right\n';
+  commandNumbers.innerHTML += '<li>Turn Right <span>&rarr;</span></li>';
+  submitButton.style.display = 'block';
 });
 
 function httpRequest(onSucess, onError) {
