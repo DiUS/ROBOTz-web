@@ -72,6 +72,9 @@ submitButton.addEventListener('click', function() {
     document.querySelector('.command-result').innerText = 'Command sent!';
     document.querySelector('.command-result').style.color = 'green';
     submitButton.innerText = oldSubmitButtonValue;
+
+    commandArea.value = '';
+    commandNumbers.innerText = '';
   };
 
   http.post(commandList, successFunction, function() {
@@ -79,5 +82,8 @@ submitButton.addEventListener('click', function() {
     document.querySelector('.command-result').innerText = 'Error!';
     document.querySelector('.command-result').style.color = 'red';
     submitButton.innerText = oldSubmitButtonValue;
+
+    commandArea.value = '';
+    commandNumbers.innerText = '';
   });
 });
