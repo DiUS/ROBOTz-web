@@ -87,3 +87,19 @@ submitButton.addEventListener('click', function() {
     commandNumbers.innerText = '';
   });
 });
+
+var welcomeDiv = document.querySelector('.welcome');
+var welcomeText = welcomeDiv.innerText;
+welcomeDiv.innerText = '';
+
+var showNextLetter = function() {
+  if (welcomeText.length) {
+    var nextCharacter = welcomeText.slice(0,1);
+    welcomeDiv.innerHTML = welcomeDiv.innerHTML.slice(0, -1) + nextCharacter + '_';
+    welcomeText = welcomeText.slice(1);
+  } else {
+    clearInterval(window.theInterval);
+  }
+};
+
+window.theInterval = setInterval(showNextLetter, 25);
