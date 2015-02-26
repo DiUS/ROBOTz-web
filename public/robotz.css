@@ -95,11 +95,14 @@ textarea {
   height: 200px;
   transform: rotate(-45deg);
   transform-origin: 100px 100px;
+  -webkit-transform: rotate(-45deg);
+  -webkit-transform-origin: 100px 100px;
 }
 
 .available-commands label {
   display: block;
   transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
   position: relative;
 }
 
