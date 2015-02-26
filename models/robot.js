@@ -16,16 +16,17 @@ function Robot() {
     },
 
     turn_left: function() {
-      sendCommand('left');
+      sendCommand('left', 10);
     },
 
     turn_right: function() {
-      sendCommand('right');
+      sendCommand('right', 10);
     }
   };
 
-  function sendCommand(command) {
-    var response = request('GET', 'http://localhost:4000/robotz/' + command);
+  function sendCommand(command, amount) {
+    var amount_params = amount ? '?amount=' + amount : '';
+    var response = request('GET', 'http://localhost:4000/robotz/' + command  + amount_params);
 
     console.log("response status: %s", response.statusCode);
   }
