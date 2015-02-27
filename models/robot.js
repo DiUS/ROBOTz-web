@@ -8,11 +8,11 @@ function Robot() {
 
   return {
     move_forwards: function() {
-      sendCommand('forward');
+      sendCommand('forward', 10);
     },
 
     move_backwards: function() {
-      sendCommand('backward');
+      sendCommand('backward', 10);
     },
 
     turn_left: function() {
@@ -27,7 +27,7 @@ function Robot() {
   function sendCommand(command, amount) {
     var amount_params = amount ? '?amount=' + amount : '';
     var server =  process.env.ENDPOINT || "localhost:4000"
-    // var server =  process.env.ENDPOINT || "192.168.1.128:4000"
+
     var url = "http://" + server + "/robotz/"
     var response = request('GET', url + command  + amount_params);
 
